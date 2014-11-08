@@ -1,0 +1,13 @@
+#Greenfoot properties
+#Sat Nov 08 13:05:14 CST 2014
+mainWindow.width=646
+class.theWorld.superclass=greenfoot.World
+package.numDependencies=0
+version=2.4.0
+project.charset=UTF-8
+world.lastInstantiated=theWorld
+class.Cannon.superclass=greenfoot.Actor
+mainWindow.y=40
+package.numTargets=0
+mainWindow.x=40
+mainWindow.height=338
