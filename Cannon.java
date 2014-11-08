@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Cannon here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Adam K 
+ * @version Versioned via git: https://github.com/ak11234/greenfoot-shooter
  */
 public class Cannon extends Actor
 {
@@ -14,6 +14,19 @@ public class Cannon extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        turnCannon();
+    }
+
+    /**
+     * 
+     */
+    public void turnCannon()
+    {
+        if (Greenfoot.isKeyDown("left")) {
+            setRotation(getRotation()-2);
+        }
+        if (Greenfoot.isKeyDown("right")) {
+            setRotation(getRotation()+2);
+        }
+    }
 }
