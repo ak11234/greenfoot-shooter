@@ -15,6 +15,7 @@ public class Cannon extends Actor
     public void act() 
     {
         turnCannon();
+        fire();
     }
 
     /**
@@ -28,5 +29,13 @@ public class Cannon extends Actor
         if (Greenfoot.isKeyDown("right")) {
             setRotation(getRotation()+2);
         }
+    }
+
+    /**
+     * Shoot a cannon ball
+     */
+    public void fire()
+    {
+        CannonBall ball = new CannonBall();
     }
 }
