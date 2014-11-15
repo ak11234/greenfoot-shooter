@@ -15,10 +15,21 @@ public class CannonBall extends Cannon
     public void act() 
     {
         fly();
+        explodeOnWall();
     }
     
     public void fly()
     {
         move(5);
+    }
+    
+    public void explodeOnWall()
+    {
+        if (getX() == getWorld().getWidth()-1 || getX() == 0){
+            getWorld().removeObject(this);
+        }
+        else if (getY() == getWorld().getHeight()-1 || getY() == 0){
+            getWorld().removeObject(this);
+        }
     }
 }
