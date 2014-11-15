@@ -14,6 +14,11 @@ public class CannonBall extends Cannon
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        fly();
+    }
+    
+    public void fly()
+    {
+        move(5);
+    }
 }
