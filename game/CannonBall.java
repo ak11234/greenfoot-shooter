@@ -38,6 +38,14 @@ public class CannonBall extends Cannon
         if (getWorld() != null) {
             Actor target = getOneObjectAtOffset(0, 0, Target.class);  
             if (target != null){
+                theWorld world = (theWorld)getWorld();
+                Counter counter = world.getCounter();
+                counter.add(1);
+                Greenfoot.playSound("explosion.wav");
+                Target newTarget = new Target();
+                int newx = Greenfoot.getRandomNumber(getWorld().getWidth()-1);
+                int newy = Greenfoot.getRandomNumber(399);
+                world.addObject(newTarget, newx, newy);
                 getWorld().removeObject(target);
                 getWorld().removeObject(this);
             }
