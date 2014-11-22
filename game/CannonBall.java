@@ -16,13 +16,14 @@ public class CannonBall extends Cannon
     {
         fly();
         explodeOnWall();
+        explodeOnTarget();
     }
-    
+
     public void fly()
     {
         move(5);
     }
-    
+
     public void explodeOnWall()
     {
         if (getX() == getWorld().getWidth()-1 || getX() == 0){
@@ -30,6 +31,16 @@ public class CannonBall extends Cannon
         }
         else if (getY() == getWorld().getHeight()-1 || getY() == 0){
             getWorld().removeObject(this);
+        }
+    }
+
+    public void explodeOnTarget(){
+        if (getWorld() != null) {
+            Actor target = getOneObjectAtOffset(0, 0, Target.class);  
+            if (target != null){
+                getWorld().removeObject(target);
+                getWorld().removeObject(this);
+            }
         }
     }
 }
